@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cairo+Play:wght@700&family=Indie+Flower&family=Lora:ital,wght@0,500;1,400&family=Nabla&display=swap');
+
+.c-item{
+    height: 480px;
+}
+.c-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+.head{
+    
+    
+    font-family: 'Cairo Play', sans-serif;
+    background-image:linear-gradient(to right,rgb(13, 135, 221),rgb(5, 143, 131));
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    font-size: xx-small;
+    
+}
+.mainhead{
+    font-family: 'Indie Flower', cursive;
+    font-size: 45px;
+    background-image:linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    filter: brightness(0.9);
+    
+}
+.content{
+    font-size: x-small;
+}
+.offer{
+    font-size: .8rem;
+    font-style: oblique;
+    
+    background-color: rgb(166, 194, 8);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+    border-radius: 7px;
+    
+}

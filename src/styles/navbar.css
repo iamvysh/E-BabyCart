@@ -1,0 +1,53 @@
+.common{
+    font-size: 12px;
+    font-family: "Open Sans",sans-serif;
+    
+}
+.common2{
+    height: 2rem;
+    font-size: 10px;
+    border-radius: 0%;
+}
+.custom-button{
+    height: 2rem;
+    width: 2.5rem;
+    font-size: 10px;
+    border-radius: 3px;
+    
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F47C7C;
+  
+  
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.icon-container {
+    display: flex;
+    align-items: center;
+    
+
+  }
+  
+  .icon {
+    margin-left: 19px;
+    margin-right: 10px; 
+    font-size: 14px; 
+     
+  }
+  .gift{
+    color: #F47C7C;
+
+  }
+
+
+  .hovoor:hover 
+  {
+
+      color: #F47C7C;
+  }
+  .custom-button:hover {
+    background-color: rgb(11, 11, 75);
+  }
