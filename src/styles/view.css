@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kalam:wght@300;700&display=swap');
+
+.mainDiv{
+    display:flex;
+    justify-content: center;
+}
+.head{
+    font-size: larger;
+    font-family: 'Kalam', cursive;
+    font-weight: 500;
+    color: rgb(19, 3, 56);
+}
+.description{
+    font-size: xx-small;
+}

@@ -12,6 +12,10 @@ import {BsCartFill} from "react-icons/bs"
 
 
 const CustomNavbar = () => {
+  
+
+
+
   return (
     <div className='common'>
       <Navbar expand="lg" className="bg-body-tertiary" style={{ padding: "0.5rem 1rem", height: "60px" }}>

@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cairo+Play:wght@700&family=Indie+Flower&family=Lora:ital,wght@0,500;1,400&family=Nabla&display=swap');
 
+
+
+.maindiv{
+    padding: 0px 10px 0px  ;
+    width: 100%;
+    height: 70vh;
+    
+}
 .c-item{
     height: 480px;
 }

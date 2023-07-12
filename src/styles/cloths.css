@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kalam:wght@300;700&display=swap');
+
+/* .mainDiv{
+    display: flex;
+    column-gap: 20px;
+    padding-left: 40px;
+    padding-top: 30px;
+    
+} */
+.title{
+    
+    font-family: 'Kalam', cursive;
+    font-weight: 500;
+    color: rgb(19, 3, 56);
+}
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+    grid-gap: 20px; /* Adds a 20px gap between grid items */
+    padding: 30px;
+  }

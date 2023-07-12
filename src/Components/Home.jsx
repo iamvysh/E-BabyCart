@@ -2,19 +2,25 @@ import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import "../styles/home.css"
+import { useNavigate } from 'react-router-dom';
 
 import {BsTags} from "react-icons/bs"
 
 
 const Home = () => {
 
+  const navigate=useNavigate()
+  const sett =()=>{
+    navigate('/category')
+    console.log("gfhgjh");
+  }
 
 
   return (
 
 
 
-    <div>
+    <div className='maindiv'>
 
 <Carousel>
       <Carousel.Item className='c-item'>
@@ -72,7 +78,7 @@ const Home = () => {
           <p className='content'>Fermentum, cursus ultrices porttitor tincidunt suscipit quam facilisis sit massa pellentesque mi quis elit elementum tristique urna.
 
           * Enim cras quam et nullam risus nec tincidunt mattis nunc.</p>
-          <Button variant="outline-primary" size="lg">
+          <Button  onClick={sett} variant="outline-primary" size="lg">
           
           SHOP NOW
         </Button>{' '}
@@ -84,6 +90,7 @@ const Home = () => {
 
 
 
+      
 
     </div>
   )
