@@ -15,16 +15,23 @@ import { context } from "../Store/Context";
 
 const CustomNavbar = () => {
   const navigate = useNavigate();
-  
-  
 
-  const { search, setsearch,login,setlogin } = useContext(context);
+  const { search, setsearch, login, setlogin, register } = useContext(context);
+
+  const logout = () => {
+    const confirm = window.confirm("are  you sure you want to logout");
+    if (confirm) {
+      setlogin(false);
+    } else {
+      null;
+    }
+  };
 
   return (
     <div className="common">
       <Navbar
         expand="lg"
-        className="bg-body-tertiary"
+        className="bg-body-tertiary "
         style={{ padding: "0.5rem 1rem", height: "60px" }}
       >
         <Container fluid>
@@ -83,30 +90,27 @@ const CustomNavbar = () => {
                     aria-label="Search"
                     onChange={(e) => setsearch(e.target.value)}
                   />
-                </Dropdown.Toggle  >
-                  
-
-                
+                </Dropdown.Toggle>
 
                 <Dropdown.Menu className="bg-transparent   overflow-hidden  w-75">
                   {productListing
                     .filter((product) => {
                       if (search === "") {
                         return product;
-                      } else if (
-                        product.name
-                          .toLowerCase()
-                          .includes(search)
-                      ) {
+                      } else if (product.name.toLowerCase().includes(search)) {
                         return product;
                       } else {
                         return false;
                       }
                     })
                     .map((product) => (
-                      <Dropdown.Item   onClick={()=>navigate(`/view/${product.id}`)}  key={product.id} className="bg-white  w-100  fs-6">
+                      <Dropdown.Item
+                        onClick={() => navigate(`/view/${product.id}`)}
+                        key={product.id}
+                        className="bg-white  w-100  fs-6"
+                      >
                         <img src={product.image} className="w-25" />
-                       <span style={{fontSize:"9px"}}>{    product.name}</span> 
+                        <span style={{ fontSize: "9px" }}>{product.name}</span>
                       </Dropdown.Item>
                     ))}
                 </Dropdown.Menu>
@@ -117,8 +121,22 @@ const CustomNavbar = () => {
               </Button>
 
               <div className="icon-container">
-                <BsCartFill  onClick={()=>login?navigate('/cart'):alert("plese login")} className="icon gift" />
-               { login?<p>register[0].name</p>:<FaUser onClick={()=>navigate("/registration")}  className="icon" />}
+                <BsCartFill
+                  onClick={() =>
+                    login ? navigate("/cart") : alert("plese login")
+                  }
+                  className="icon gift"
+                />
+                {login ? (
+                  <p onClick={logout} className="Username">
+                    {register[0].name}
+                  </p>
+                ) : (
+                  <FaUser
+                    onClick={() => navigate("/registration")}
+                    className="icon"
+                  />
+                )}
               </div>
             </Form>
           </Navbar.Collapse>

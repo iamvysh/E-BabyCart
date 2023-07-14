@@ -7,3 +7,11 @@
     height: 100vh !important;
     }
     }
+
+    .removebuttn{
+        
+        background-color: rgb(243, 94, 94);
+        border-radius: 9px;
+        
+        
+    }

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "../styles/cart.css";
 import {
   MDBBtn,
   MDBCard,
@@ -18,44 +19,57 @@ import StripeCheckout from "react-stripe-checkout";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cart,setcart } = useContext(context);
+  const { cart, setcart } = useContext(context);
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   //  *****************quantity change***************
-const addQty = (id)=>{
-  const newqty = cart.map(
+  const addQty = (id) => {
+    const newqty = cart.map((item) =>
+      item.id == id ? { ...item, qty: item.qty + 1 } : item
+    );
 
-   (item)=>  item.id == id  ? {...item, qty: item.qty+1,} :  item
- 
- )
+    setcart(newqty);
 
- setcart(newqty); 
- 
- console.log(cart);
+    console.log(cart);
+  };
 
-}
+  const removeQty = (id) => {
+    const newqty = cart.map((item) =>
+      item.id == id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item
+    );
 
-const removeQty = (id)=>{
+    setcart(newqty);
+  };
 
-  const newqty = cart.map(
-    (item)=>  item.id == id && item.qty >1 ? {...item, qty: item.qty-1  } :  item
-  
-  )
+  //*********************end******************************/
 
-  setcart(newqty);
-
-}
-
+  // *********************payment*************************8
 
   const handleToken = (token) => {
-    console.log(token); // You can perform further actions with the token, like sending it to your server for processing
+    console.log(token);
+    setcart([]); // You can perform further actions with the token, like sending it to your server for processing
   };
   const calculateTotalAmount = () => {
     const totalAmount = cart.reduce((sum, item) => {
-      return sum + item.rate *item.qty;
+      return sum + item.rate * item.qty;
     }, 0);
-    return totalAmount * 100; // Stripe requires the amount in cents, so multiply by 100
+
+    return totalAmount * 100;
+
+    // Stripe requires the amount in cents, so multiply by 100
+  };
+
+  // *****************end*****************************************
+
+  // *****************delete item from cart *********************
+
+  const removeitem = (id) => {
+    const removeItmId = parseInt(id);
+
+    const newItems = cart.filter((item) => item.id !== removeItmId);
+    setcart(newItems);
+    console.log("hy");
   };
 
   return (
@@ -80,16 +94,20 @@ const removeQty = (id)=>{
                             Shopping Cart
                           </MDBTypography>
                           <MDBTypography className="mb-0 text-muted">
-                            {cart.reduce((sum,item)=>{
-                              return sum+item.qty
-                            },0)} items
+                            {cart.reduce((sum, item) => {
+                              return sum + item.qty;
+                            }, 0)}{" "}
+                            items
                           </MDBTypography>
                         </div>
 
                         <hr className="my-4" />
 
                         {cart.map((product) => (
-                          <MDBRow className="mb-4 d-flex justify-content-between align-items-center">
+                          <MDBRow
+                            key={product.id}
+                            className="mb-4 d-flex justify-content-between align-items-center"
+                          >
                             <MDBCol md="2" lg="2" xl="2">
                               <MDBCardImage
                                 src={product.image}
@@ -109,7 +127,8 @@ const removeQty = (id)=>{
                                 {product.name}
                               </MDBTypography>
                             </MDBCol>
-                            <MDBCol style={{textAlign:'center'}}
+                            <MDBCol
+                              style={{ textAlign: "center" }}
                               md="3"
                               lg="4"
                               xl="3"
@@ -117,10 +136,11 @@ const removeQty = (id)=>{
                             >
                               <MDBBtn color="link" className="px-2">
                                 {/* <MDBIcon fas icon="minus" /> */}
-
                               </MDBBtn>
-                              <button onClick={()=>removeQty(product.id)} > - </button>   
-
+                              <button onClick={() => removeQty(product.id)}>
+                                {" "}
+                                -{" "}
+                              </button>
 
                               {/* <MDBInput
                                 type="number"
@@ -130,23 +150,36 @@ const removeQty = (id)=>{
 
                               /> */}
 
-                         <input  placeholder={product.qty}  style={{width:'30px',textAlign:'center'}} type="text" />   
-                              
-                                 
-                                 <button onClick={()=>addQty(product.id)} > + </button>   
+                              <input
+                                placeholder={product.qty}
+                                style={{ width: "30px", textAlign: "center" }}
+                                type="text"
+                              />
+
+                              <button onClick={() => addQty(product.id)}>
+                                {" "}
+                                +{" "}
+                              </button>
                               <MDBBtn color="link" className="px-2">
                                 {/* <MDBIcon fas icon="plus" onClick={()=>addQty(product.id)} /> */}
                               </MDBBtn>
                             </MDBCol>
                             <MDBCol md="3" lg="2" xl="2" className="text-end">
                               <MDBTypography tag="h6" className="mb-0">
-                                $ {product.rate*product.qty}
+                                $ {product.rate * product.qty}
                               </MDBTypography>
                             </MDBCol>
                             <MDBCol md="1" lg="1" xl="1" className="text-end">
-                              <a href="#!" className="text-muted">
-                                <MDBIcon fas icon="times" />
-                              </a>
+                              {/* <a href="#!" className="text-muted">
+                                <MDBIcon fas icon="times"  onClick={removeitem}/>
+                              </a> */}
+
+                              <button
+                                className="removebuttn"
+                                onClick={() => removeitem(product.id)}
+                              >
+                                X
+                              </button>
                             </MDBCol>
                           </MDBRow>
                         ))}
@@ -162,7 +195,11 @@ const removeQty = (id)=>{
                               href="#!"
                               className="text-body"
                             >
-                              <MDBIcon      onClick={()=>navigate("/")} fas icon="long-arrow-alt-left me-2" />{" "}
+                              <MDBIcon
+                                onClick={() => navigate("/")}
+                                fas
+                                icon="long-arrow-alt-left me-2"
+                              />{" "}
                               Back to shop
                             </MDBCardText>
                           </MDBTypography>
@@ -187,7 +224,7 @@ const removeQty = (id)=>{
                           <MDBTypography tag="h5">
                             ${" "}
                             {cart.reduce((sum, item) => {
-                              return sum + item.rate*item.qty   ;
+                              return sum + item.rate * item.qty;
                             }, 0)}
                           </MDBTypography>
                         </div>
@@ -225,26 +262,40 @@ const removeQty = (id)=>{
                           <MDBTypography tag="h5">
                             ${" "}
                             {cart.reduce((sum, item) => {
-                              return sum + item.rate *item.qty ;
+                              return sum + item.rate * item.qty;
                             }, 0)}
                           </MDBTypography>
                         </div>
 
-                        <MDBBtn color="dark" block size="lg">
-                          <StripeCheckout
-                            token={handleToken}
-                            stripeKey="pk_test_51NFs2ASGzs5sMSCWpsCjE36jOmmfZCo4573jUp4yVSo2o2sI20QexCzUVtF8q4tpdRe61PIpGJT5pPmdOZAHgLb800GljwZC2c"
-                            amount={calculateTotalAmount()}
-                            name="Your Store"
-                            description="Payment for items in the cart"
-                            billingAddress={true}
-                            shippingAddress={true}
-                            successUrl="https://www.google.com/"
-                            cancelUrl="https://community.spotify.com/t5/image/serverpage/image-id/151609iB63315F09CA89489/image-size/medium?v=v2&px=400" 
-                          >
-                            Check Out
-                          </StripeCheckout>
-                        </MDBBtn>
+                        {/* <MDBBtn color="dark" block size="lg"> */}
+
+                        <button
+                          onClick={() => {
+                            if (calculateTotalAmount() !== 0) {
+                              return (
+                                <StripeCheckout
+                                  token={handleToken}
+                                  stripeKey="pk_test_51NFs2ASGzs5sMSCWpsCjE36jOmmfZCo4573jUp4yVSo2o2sI20QexCzUVtF8q4tpdRe61PIpGJT5pPmdOZAHgLb800GljwZC2c"
+                                  amount={calculateTotalAmount()}
+                                  name="Your Store"
+                                  description="Payment for items in the cart"
+                                  billingAddress={true}
+                                  shippingAddress={true}
+                                  successUrl="https://www.google.com/"
+                                  cancelUrl="https://community.spotify.com/t5/image/serverpage/image-id/151609iB63315F09CA89489/image-size/medium?v=v2&px=400"
+                                >
+                                  Checkout
+                                </StripeCheckout>
+                              );
+                            } else {
+                              alert("Add something to the cart");
+                            }
+                          }}
+                        >
+                          Checkout
+                        </button>
+
+                        {/* </MDBBtn> */}
                       </div>
                     </MDBCol>
                   </MDBRow>

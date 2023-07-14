@@ -45,6 +45,9 @@ body{
     color: #F47C7C;
 
   }
+  .gift:hover{
+    color: black;
+  }
 
 
   .hovoor:hover 
@@ -54,4 +57,13 @@ body{
   }
   .custom-button:hover {
     background-color: rgb(11, 11, 75);
+  }
+  .Username{
+  margin-bottom:  0rem;
+  font-weight: 600;
+  background-color: chartreuse;
+  border-radius: 1rem;
+  }
+  .Username:hover{
+    scale: 3rem;
   }
