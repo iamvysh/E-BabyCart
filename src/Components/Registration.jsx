@@ -28,18 +28,28 @@ function RRegistration() {
   const phoneRef = useRef(null);
   const PasswordRef = useRef(null);
   const data=useContext(context)
-  const {signin,setsignin}=data;
+  const {signin,setsignin,register,setregister}=data;
   const navigate=useNavigate()
 
 
   const handleSubmit = (e) => {
+
+    
     e.preventDefault()
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const phonenumber = phoneRef.current.value;
     const password = PasswordRef.current.value;
+
+    if (!name || !email || !phonenumber || !password) {
+      alert('Please fill in all the required fields.');
+      return;
+    }
     setsignin([...signin, { name, email, phonenumber, password }]);
+    setregister([...register,{name}])
     console.log(signin);
+    // console.log(register);
+    // console.log(signin);
     navigate("/login")
 
     // console.log(name, email, password, repeatPassword);
@@ -104,9 +114,10 @@ function RRegistration() {
           <div className='d-flex flex-row justify-content-center mb-4'>
           <h6 className="text-uppercase text-center mb-2"> Already  Register   <Link to={"/login"}>LOGIN</Link></h6>
           </div>
-          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg' onClick={handleSubmit}>
+          {/* <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg' onClick={handleSubmit}>
             Register
-          </MDBBtn>
+          </MDBBtn> */}
+           <button onClick={handleSubmit}  className='mb-4 w-100 gradient-custom-4 extra' size='lg'> Register</button>
         </MDBCardBody>
       </MDBCard>
     </MDBContainer>

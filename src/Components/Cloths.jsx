@@ -12,7 +12,7 @@ const Cloths = () => {
 
     const cloths=productListing.filter((item)=>item.category=="cloths")
 
-    console.log(cloths);
+    
 
     const navigate=useNavigate()
 
@@ -31,7 +31,7 @@ const Cloths = () => {
         <Card.Text>
           $ {item.rate}
         </Card.Text>
-        <Button variant="primary">Add To Cart</Button>
+        <Button variant="primary">View Item</Button>
       </Card.Body>
     </Card>
     </div>

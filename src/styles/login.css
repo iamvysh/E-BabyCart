@@ -36,3 +36,15 @@
       border-bottom-right-radius: .3rem;
     }
   }
+  .title{
+    
+    font-family: 'Kalam', cursive;
+    font-weight: 500;
+    color: rgb(19, 3, 56);
+    background-color: #f04b4b;
+    border-radius: 5px;
+    box-shadow: #b44593 19px;
+}
+.title:hover{
+  scale: 1.2;
+}

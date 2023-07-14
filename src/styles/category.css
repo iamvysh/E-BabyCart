@@ -1,24 +1,38 @@
-.main{
+.main {
     height: 69vh;
-    width:100%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+  }
+  
+  .cardContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 26px;
+    margin-right: 26px;
     
-}
-.image{
-    height: 100%;
+
+  }
+  .image {
+    height: 200px; /* Set the desired fixed height for the images */
     object-fit: cover;
-    filter: brightness(0.9);
+    filter: brightness(0.7);
+  }  
+  .cardText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    pointer-events: none;
+  }
 
-}
-.image:hover{
-
-    filter: brightness(0.6);
+  .image:hover{
     
-
-}
-.head{
-    position: relative;
-    
-}
+    filter: brightness(0.3);
+  }

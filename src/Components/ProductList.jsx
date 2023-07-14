@@ -7,7 +7,7 @@ export const productListing = [
     deepdes : "Egestas fringilla eu pellentesque phasellus sed varius non ut tincidunt sed massa nec massa pulvinar ipsum sed vitae vitae feugiat sem in etiam non turpis blandit lorem fringilla lacus elementum urna maecenas proin eget fermentum nunc morbi mus pretium cursus",
     rate : 8,
     image :"https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-12.jpg", 
-    
+    qty:1,
    },
     {
     id : 2,
@@ -17,7 +17,7 @@ export const productListing = [
     deepdes : "Egestas fringilla eu pellentesque phasellus sed varius non ut tincidunt sed massa nec massa pulvinar ipsum sed vitae vitae feugiat sem in etiam non turpis blandit lorem fringilla lacus elementum urna maecenas proin eget fermentum nunc morbi mus pretium cursus",
     rate : 10,
     image:"https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-7.jpg",
-    
+    qty:1,
    },
     {
     id : 3,
@@ -27,7 +27,7 @@ export const productListing = [
     deepdes :"Egestas fringilla eu pellentesque phasellus sed varius non ut tincidunt sed massa nec massa pulvinar ipsum sed vitae vitae feugiat sem in etiam non turpis blandit lorem fringilla lacus elementum urna maecenas proin eget fermentum nunc morbi mus pretium cursus",
     rate : 12,
     image:"https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-4.jpg",
-    
+    qty:1,
    },
     {
     id : 4,
@@ -37,7 +37,7 @@ export const productListing = [
     deepdes :"Egestas fringilla eu pellentesque phasellus sed varius non ut tincidunt sed massa nec massa pulvinar ipsum sed vitae vitae feugiat sem in etiam non turpis blandit lorem fringilla lacus elementum urna maecenas proin eget fermentum nunc morbi mus pretium cursus",
     rate : 40.25,
     image:"https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-11.jpg",
-    
+    qty:1,
    },
     {
     id : 5,
@@ -47,7 +47,7 @@ export const productListing = [
     deepdes :"Egestas fringilla eu pellentesque phasellus sed varius non ut tincidunt sed massa nec massa pulvinar ipsum sed vitae vitae feugiat sem in etiam non turpis blandit lorem fringilla lacus elementum urna maecenas proin eget fermentum nunc morbi mus pretium cursus",
     rate : 4.75,
     image:"https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-10.jpg",
-    
+    qty:1,
    },
     
     {
@@ -58,7 +58,7 @@ export const productListing = [
     deepdes :"Egestas fringilla eu pellentesque phasellus sed varius non ut tincidunt sed massa nec massa pulvinar ipsum sed vitae vitae feugiat sem in etiam non turpis blandit lorem fringilla lacus elementum urna maecenas proin eget fermentum nunc morbi mus pretium cursus",
     rate : 35.50 ,
     image:"https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-8.jpg",
-    
+    qty:1,
    },
     {
     id : 8,
@@ -68,7 +68,7 @@ export const productListing = [
     deepdes :"Egestas fringilla eu pellentesque phasellus sed varius non ut tincidunt sed massa nec massa pulvinar ipsum sed vitae vitae feugiat sem in etiam non turpis blandit lorem fringilla lacus elementum urna maecenas proin eget fermentum nunc morbi mus pretium cursus",
     rate : 30.50,
     image:"https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-3.jpg",
-    
+    qty:1,
    } ,
     {
     id : 9,
@@ -78,8 +78,8 @@ export const productListing = [
     deepdes :"Egestas fringilla eu pellentesque phasellus sed varius non ut tincidunt sed massa nec massa pulvinar ipsum sed vitae vitae feugiat sem in etiam non turpis blandit lorem fringilla lacus elementum urna maecenas proin eget fermentum nunc morbi mus pretium cursus",
     rate : 6.50 ,
     image:"https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-9.jpg",
-    
-   },,
+    qty:1,
+   },
    {
    id : 10,
    name : "VitCom Nutrition Fruits Flavor",
@@ -88,6 +88,6 @@ export const productListing = [
    deepdes :"Egestas fringilla eu pellentesque phasellus sed varius non ut tincidunt sed massa nec massa pulvinar ipsum sed vitae vitae feugiat sem in etiam non turpis blandit lorem fringilla lacus elementum urna maecenas proin eget fermentum nunc morbi mus pretium cursus",
    rate : 9 ,
    image:"https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-6.jpg",
-   
+   qty:1,
   },
 ]

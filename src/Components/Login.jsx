@@ -16,18 +16,24 @@ function Login() {
   const emailRef=useRef()
   const PasswordRef=useRef()
   const data=useContext(context)
-  const {signin,setsignin}=data
+  const {signin,setsignin,login,setlogin}=data
 
   const submitLogin=()=>{
     const username=emailRef.current.value;
     const password=PasswordRef.current.value;
+
+    if (!username ||  !password) {
+      alert('Please fill in all the required fields.');
+      return;
+    }
     const user=signin.filter((item)=>item.name==username&&item.password==password)
-    console.log(username,password,user);
+    console.log(user);
 
     if(user.length>0){
-      navigate('/')
+      // navigate('/')
+      setlogin(true)
     }else{
-      navigate('/registration')
+      // navigate('/registration')
     }
   }
 
@@ -67,7 +73,9 @@ function Login() {
 
 
             <div className="text-center pt-1 mb-5 pb-1">
-              <MDBBtn onClick={submitLogin} className="mb-4 w-100 gradient-custom-2" >Login</MDBBtn>
+              {/* <MDBBtn onClick={submitLogin} className="mb-4 w-100 gradient-custom-2" >Login</MDBBtn> */}
+
+              <button onClick={submitLogin}  className='title'>  Login</button>
               
             </div>
 

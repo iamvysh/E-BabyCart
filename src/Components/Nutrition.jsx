@@ -31,7 +31,7 @@ const Nutrition = () => {
         <Card.Text>
           $ {item.rate}
         </Card.Text>
-        <Button variant="primary">Add To Cart</Button>
+        <Button variant="primary">View Item</Button>
       </Card.Body>
     </Card>
     </div>
