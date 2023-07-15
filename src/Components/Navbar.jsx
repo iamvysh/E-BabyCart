@@ -16,7 +16,7 @@ import { context } from "../Store/Context";
 const CustomNavbar = () => {
   const navigate = useNavigate();
 
-  const { search, setsearch, login, setlogin, register } = useContext(context);
+  const { search, setsearch, login, setlogin, register,cart } = useContext(context);
 
   const logout = () => {
     const confirm = window.confirm("are  you sure you want to logout");
@@ -121,9 +121,10 @@ const CustomNavbar = () => {
               </Button>
 
               <div className="icon-container">
+                {/* <div className="cartnumber">{cart.length}</div> */}
                 <BsCartFill
                   onClick={() =>
-                    login ? navigate("/cart") : alert("plese login")
+                    login ? navigate("/cart") : alert("please login")
                   }
                   className="icon gift"
                 />

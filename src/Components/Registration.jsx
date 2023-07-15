@@ -26,12 +26,13 @@ function RRegistration() {
     const email = emailRef.current.value;
     const phonenumber = phoneRef.current.value;
     const password = PasswordRef.current.value;
+    const id=Date.now()
 
     if (!name || !email || !phonenumber || !password) {
       alert("Please fill in all the required fields.");
       return;
     }
-    setsignin([...signin, { name, email, phonenumber, password }]);
+    setsignin([...signin, { name,id, email, phonenumber, password }]);
     setregister([...register, { name }]);
     console.log(signin);
     // console.log(register);

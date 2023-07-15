@@ -15,3 +15,21 @@
         
         
     }
+    .cart-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      
+      .cart-item {
+        max-height: 200px;
+      }
+      
+      .cart-image {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      .cart-quantity {
+        width: 50px;
+        text-align: center;
+      }

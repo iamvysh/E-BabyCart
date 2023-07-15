@@ -74,9 +74,9 @@ const Cart = () => {
 
   return (
     <div>
-      <section className="h-100 h-custom" style={{ backgroundColor: "#eee" }}>
-        <MDBContainer className="py-5 h-100">
-          <MDBRow className="justify-content-center align-items-center h-100">
+      <section  style={{ backgroundColor: "#eee" }}>
+        <MDBContainer className="py-5  cart-container">
+          <MDBRow className="justify-content-center align-items-center ">
             <MDBCol size="12">
               <MDBCard
                 className="card-registration card-registration-2"
@@ -267,12 +267,10 @@ const Cart = () => {
                           </MDBTypography>
                         </div>
 
-                        {/* <MDBBtn color="dark" block size="lg"> */}
+                        <MDBBtn color="dark" block size="lg">
 
-                        <button
-                          onClick={() => {
-                            if (calculateTotalAmount() !== 0) {
-                              return (
+                        
+                            
                                 <StripeCheckout
                                   token={handleToken}
                                   stripeKey="pk_test_51NFs2ASGzs5sMSCWpsCjE36jOmmfZCo4573jUp4yVSo2o2sI20QexCzUVtF8q4tpdRe61PIpGJT5pPmdOZAHgLb800GljwZC2c"
@@ -286,16 +284,11 @@ const Cart = () => {
                                 >
                                   Checkout
                                 </StripeCheckout>
-                              );
-                            } else {
-                              alert("Add something to the cart");
-                            }
-                          }}
-                        >
-                          Checkout
-                        </button>
+                              
+                            
+                         
 
-                        {/* </MDBBtn> */}
+                        </MDBBtn>
                       </div>
                     </MDBCol>
                   </MDBRow>
