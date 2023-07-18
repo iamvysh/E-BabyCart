@@ -21,6 +21,7 @@ import Admin from './Components/Admin';
 import { productListing } from './Components/ProductList';
 import Editproduct from './Components/Editproduct';
 import Adminusers from './Components/Adminusers';
+import Addproducts from './Components/Addproducts';
 
 
 function App() {
@@ -71,6 +72,8 @@ function App() {
       <Route path='product/:id' element={<Editproduct/>} />
 
       <Route path='/users'  element={<Adminusers/>} />
+      
+      <Route path='/addproducts' element={<Addproducts/>} />
 
 
     </Routes>

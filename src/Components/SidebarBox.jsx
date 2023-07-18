@@ -52,12 +52,12 @@ const SidebarBox = () => {
 
 
 
-            <BsListStars/>  <span className="  text-white   lists " style={{marginLeft:"20px"}}>Products</span>   <br /><br />
+            <BsListStars/>  <span className="  text-white   lists " style={{marginLeft:"20px"}} onClick={()=>navigate("/admin")}>Products</span>   <br /><br />
 
             <FaAddressCard   style={{marginRight:"50px"}}/>     <span className="  text-white   lists "  onClick={()=>navigate("/users")}>Users</span>   <br /><br />
 
 
-            <IoIosAdd  style={{marginRight:"5px" ,marginLeft:"10px"}} />    <span className="  text-white   lists ">Add Products</span>   <br /><br />
+            <IoIosAdd  style={{marginRight:"5px" ,marginLeft:"10px"}} />    <span className="  text-white   lists "  onClick={()=>navigate("/addproducts")}>Add Products</span>   <br /><br />
             
             <Button variant="success" style={{ fontSize: '0.8rem', padding: '0.3rem 0.5rem' }}   onClick={handlelogout}>Logout</Button>{' '}
 

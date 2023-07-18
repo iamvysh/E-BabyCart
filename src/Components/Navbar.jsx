@@ -12,6 +12,7 @@ import { BsCartFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { productListing } from "./ProductList";
 import { context } from "../Store/Context";
+import { BiExit} from "react-icons/bi";
 
 const CustomNavbar = () => {
   const navigate = useNavigate();
@@ -128,11 +129,7 @@ const CustomNavbar = () => {
                   }
                   className="icon gift"
                 />
-                {login ? (
-                  <p onClick={logout} className="Username">
-                    {register[0].name}
-                  </p>
-                ) : (
+                {login ? <  BiExit onClick={logout}  style={{fontSize:"14px"}} /> : (
                   <FaUser
                     onClick={() => navigate("/registration")}
                     className="icon"
