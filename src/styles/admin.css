@@ -1,0 +1,28 @@
+
+
+/* .table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed
+  }  */
+
+  .admin-container {
+    display: flex;
+  }
+  
+
+  
+
+td{
+  font-size: x-small;
+}
+Table-conatainer{
+  background-color: rgb(157, 157, 226);
+}
+
+
+#mainconatainer{
+  overflow:auto;
+  height: 100vh;
+}

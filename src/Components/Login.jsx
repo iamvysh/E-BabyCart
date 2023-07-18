@@ -1,4 +1,6 @@
 import React, { useContext, useRef } from "react";
+
+
 import {
   MDBBtn,
   MDBContainer,
@@ -15,11 +17,19 @@ function Login() {
   const emailRef = useRef();
   const PasswordRef = useRef();
   const data = useContext(context);
-  const { signin, setsignin, login, setlogin } = data;
-
+  const { signin, setsignin, login, setlogin,admin,setadmin } = data;
+  
   const submitLogin = () => {
     const username = emailRef.current.value;
     const password = PasswordRef.current.value;
+    
+    const adminUsername = import.meta.env.VITE_APP_ADMIN_EMAIL;
+    const adminPassword = import.meta.env.VITE_APP_ADMIN_PASSWORD;
+    
+
+
+    
+
 
     if (!username || !password) {
       alert("Please fill in all the required fields.");
@@ -27,16 +37,27 @@ function Login() {
     }
     console.log(username);
     console.log(password);
-    const user = signin.filter(
-      (item) => item.password == password && item.email == username
-    );
-    console.log(user);
 
-    if (user.length > 0) {
-      navigate("/");
-      setlogin(true);
-    } else {
-      navigate("/registration");
+
+    if (username == adminUsername && password == adminPassword) {
+      // Admin login
+      navigate("/admin");
+      setadmin(true)
+
+    }
+    else{
+
+      const user = signin.filter(
+        (item) => item.password == password && item.email == username
+      );
+      console.log(user);
+  
+      if (user.length > 0) {
+        navigate("/");
+        setlogin(true);
+      } else {
+        navigate("/registration");
+      }
     }
   };
 

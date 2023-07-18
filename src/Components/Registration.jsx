@@ -42,6 +42,8 @@ function RRegistration() {
     // console.log(name, email, password, repeatPassword);
   };
 
+  console.log(signin);
+
   return (
     <MDBContainer
       fluid

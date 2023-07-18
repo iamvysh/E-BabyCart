@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {context} from "./Store/Context"
@@ -6,7 +6,7 @@ import {context} from "./Store/Context"
 import "./App.css"
 
 import CustomNavbar from './Components/Navbar';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Login from './Components/Login';
 import RRegistration from './Components/Registration';
 import Home from './Components/Home';
@@ -17,19 +17,34 @@ import Cloths from './Components/Cloths';
 import Nutrition from './Components/Nutrition';
 import ViewPeoducts from './Components/ViewPeoducts';
 import Cart from './Components/Cart';
+import Admin from './Components/Admin';
+import { productListing } from './Components/ProductList';
+import Editproduct from './Components/Editproduct';
+import Adminusers from './Components/Adminusers';
 
 
 function App() {
 
-
+   const location=useLocation()
   const [signin,setsignin]=useState([])
   const [search,setsearch]=useState()
   const [cart,setcart]=useState([])
   const [login,setlogin]=useState(false)
   const [register,setregister]=useState([])
+  const [admin,setadmin]=useState(false)
+  const [allproducts,setallproducts]=useState(productListing)
 
 
-  const state={signin,setsignin,search,setsearch,cart,setcart,login,setlogin,register,setregister}
+  // useEffect(()=>{
+  //   if(location.pathname.includes("admin")){
+  //     return setadmin(false)
+  //   }
+    
+  // },[])
+  console.log(location);
+   
+
+  const state={signin,setsignin,search,setsearch,cart,setcart,login,setlogin,register,setregister,allproducts,setallproducts,admin,setadmin}
   
 
   return (
@@ -38,7 +53,7 @@ function App() {
     
     <context.Provider  value={state}>
 
-    <CustomNavbar/>
+     {admin?null:<CustomNavbar/>}
     <Routes>
       <Route path='/'   element={<Home/>}   />
       <Route path='/login' element={<Login/>}      />
@@ -51,8 +66,17 @@ function App() {
       <Route path='/cart' element={<Cart/>} />
 
 
+      <Route path='/admin' element={<Admin/>} />
+      
+      <Route path='product/:id' element={<Editproduct/>} />
+
+      <Route path='/users'  element={<Adminusers/>} />
+
+
     </Routes>
-    <Footer/>
+
+    {admin?null:<Footer/>}
+    
 
     </context.Provider>
 

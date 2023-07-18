@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+
+
+
+
+
+/* .sidebar {
+    width: 271px;
+    height: 100vh;
+    background-color: #323436;
+
+  }
+  
+  .sidebar h2 {
+    margin-top: 20px;
+    font-family: 'Kalam', cursive;
+    /* color: #e7dfdf; */
+    /* font-weight: 600;
+    
+  }
+   */
+  
+ 
+   
+ 
+
+  /* .he{
+    margin-top: 146px;
+    color: white;
+    
+  }
+  .lists{
+    font-family: 'Montserrat', sans-serif;
+    font-size: small;
+  }
+   .lists:hover{
+    font-size: medium;
+   } */ 
+   .sidebar {
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #323436;
+  }
+  
+  .sidebar h2 {
+    margin-top: 20px;
+    font-family: 'Kalam', cursive;
+    font-weight: 600;
+  }
+  
+  .he {
+    margin-top: 146px;
+    color: white;
+  }
+  
+  .lists {
+    font-family: 'Montserrat', sans-serif;
+    font-size: small;
+  }
+  
+  .lists:hover {
+    font-size: medium;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      max-width: 100%;
+    }
+  
+    .he {
+      margin-top: 30px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .he {
+      margin-top: 10px;
+    }
+  }
+  
