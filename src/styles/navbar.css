@@ -72,3 +72,10 @@ body{
     background-color: aquamarine;
      
   }
+
+  @media screen and (max-width: 768px) {
+    .nav{
+      z-index: 1;
+      
+    }
+  }

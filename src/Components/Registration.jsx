@@ -27,11 +27,38 @@ function RRegistration() {
     const phonenumber = phoneRef.current.value;
     const password = PasswordRef.current.value;
     const id=Date.now()
+      
 
-    if (!name || !email || !phonenumber || !password) {
-      alert("Please fill in all the required fields.");
+      //simple form validation
+
+
+      //simple name field validation
+    if (!nameRef.current.value.trim()) {
+      alert('Please enter your name.');
       return;
     }
+
+    // Validation for email
+    const emailPattern = /^\S+@\S+\.\S+$/;
+    if (!emailPattern.test(emailRef.current.value)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    // Validation for phone number
+    const phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(phoneRef.current.value)) {
+      alert('Please enter a 10-digit phone number.');
+      return;
+    }
+
+    // Validation for password: 6 characters, at least one uppercase letter, one symbol, and one number
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    if (!passwordPattern.test(PasswordRef.current.value)) {
+      alert('Password must be at least 6 characters long and contain at least one uppercase letter, one number, and one symbol.');
+      return;
+    }
+
     setsignin([...signin, { name,id, email, phonenumber, password }]);
     setregister([...register, { name }]);
     console.log(signin);

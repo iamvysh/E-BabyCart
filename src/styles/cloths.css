@@ -18,4 +18,22 @@
     grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
     grid-gap: 20px; /* Adds a 20px gap between grid items */
     padding: 30px;
+    
+  }
+
+
+
+  @media screen and (max-width: 768px) {
+    .gridContainer {
+      grid-template-columns: repeat(1,1fr); /* Creates 2 equal-width columns */
+      padding: 20px;
+    
+    }
+  
+    .title {
+      font-size: 16px; /* Adjust font size for smaller screens */
+    }
+    .card{
+      margin-right: 200px;
+    }
   }

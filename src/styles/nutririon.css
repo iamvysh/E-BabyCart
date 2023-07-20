@@ -15,7 +15,7 @@
 }
 .gridContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-    grid-gap: 20px; /* Adds a 20px gap between grid items */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 20px; 
     padding: 30px;
   }

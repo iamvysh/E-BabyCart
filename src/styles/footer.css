@@ -56,3 +56,22 @@ h6{
     color: #f04b4b;
     
 }
+@media screen and (max-width: 768px) {
+    .main {
+      flex-direction: column;
+    }
+    
+    .details, .customer, .categories, .company {
+      margin-right: 0;
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
+    
+    h6 {
+      font-size: 0.9rem;
+    }
+    
+    .common, p {
+      font-size: 12px;
+    }
+  }

@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "../styles/cloths.css";
 import { useNavigate } from "react-router-dom";
+import {Row,Col} from "react-bootstrap"
 
 const Cloths = () => {
   const cloths = productListing.filter((item) => item.category == "cloths");
@@ -12,12 +13,21 @@ const Cloths = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="gridContainer">
+
+    <div className="container  "> 
+    
+    <div className="row ">
       {cloths.map((item) => (
-        <div key={item.id}>
+        
+
+          
           <Card
-            style={{ width: "18rem" }}
-            onClick={() => navigate(`/view/${item.id}`)}
+           key={item.id}
+            style={{ width: "16rem",marginRight:"30px",marginBottom:"20px" }}
+            onClick={() => navigate(`/view/${item.id}`)
+            
+          }
+          className="col-lg-4 col- xs-12  col-md-6 card"
           >
             <Card.Img variant="top" src={item.image} />
             <Card.Body>
@@ -25,9 +35,12 @@ const Cloths = () => {
               <Card.Text>$ {item.rate}</Card.Text>
               <Button variant="primary">View Item</Button>
             </Card.Body>
-          </Card>
-        </div>
+            </Card>
+          
+          
+        
       ))}
+    </div>
     </div>
   );
 };

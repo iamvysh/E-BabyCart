@@ -32,7 +32,7 @@ const CustomNavbar = () => {
     <div className="common">
       <Navbar
         expand="lg"
-        className="bg-body-tertiary "
+        className="bg-body-tertiary nav"
         style={{ padding: "0.5rem 1rem", height: "60px" }}
       >
         <Container fluid>

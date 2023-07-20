@@ -96,14 +96,54 @@ const ViewPeoducts = () => {
       </div>
 
       <h1 className="head2">Similer products</h1>
-      <div className="gridContainer">
+
+
+      <div className="container  "> 
+    
+    <div className="row ">
+      {productListing
+          .filter(
+            (item) =>
+              item.category == product[0].category && item.id !== product[0].id
+          ).map((item) => (
+        
+
+          
+          <Card
+           key={item.id}
+            style={{ width: "16rem",marginRight:"30px",marginBottom:"20px" }}
+            
+          className="col-lg-4 col- xs-12  col-md-6 card"
+          >
+            <Card.Img variant="top" src={item.image} />
+            <Card.Body>
+              <Card.Title className="title">{item.name}</Card.Title>
+              <Card.Text>$ {item.rate}</Card.Text>
+              <Button variant="primary" onClick={() => navigate(`/view/${item.id}`)
+            
+          }>View Item</Button>
+            </Card.Body>
+            </Card>
+          
+          
+        
+      ))}
+    </div>
+    </div>
+
+
+
+
+
+
+      {/* <div className="gridContainer">
         {productListing
           .filter(
             (item) =>
               item.category == product[0].category && item.id !== product[0].id
           )
           .map((item) => (
-            <Card key={item.id} style={{ width: "18rem" }} className="card">
+            <Card key={item.id} style={{ width: "18rem" }} className="className="col-lg-4 col- xs-12  col-md-6 card">
               <Card.Img
                 variant="top"
                 src={item.image}
@@ -121,7 +161,7 @@ const ViewPeoducts = () => {
               </Card.Body>
             </Card>
           ))}
-      </div>
+      </div> */}
     </>
   );
 };

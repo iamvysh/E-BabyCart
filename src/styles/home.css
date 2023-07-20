@@ -52,3 +52,29 @@
     border-radius: 7px;
     
 }
+
+@media screen and (max-width: 768px) {
+
+    .maindiv{
+        padding: 0px 10px 0px  ;
+        width: 100%;
+        height: 70vh;
+        margin-top: 250px;
+        
+    }
+    .head {
+        
+        font-size: xx-small;
+      }
+    
+      .mainhead {
+        
+        font-size: 30px;
+      }
+    
+      .content {
+        
+        font-size: x-small;
+      }
+   
+  }

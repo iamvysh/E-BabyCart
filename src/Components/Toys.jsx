@@ -15,12 +15,20 @@ const Toys = () => {
   console.log(toys);
 
   return (
-    <div className="gridContainer ">
+    <div className="container  "> 
+    
+    <div className="row ">
       {toys.map((item) => (
-        <div key={item.id}>
+        
+
+          
           <Card
-            style={{ width: "18rem" }}
-            onClick={() => navigate(`/view/${item.id}`)}
+           key={item.id}
+            style={{ width: "16rem",marginRight:"30px",marginBottom:"20px" }}
+            onClick={() => navigate(`/view/${item.id}`)
+            
+          }
+          className="col-lg-4 col- xs-12  col-md-6 card"
           >
             <Card.Img variant="top" src={item.image} />
             <Card.Body>
@@ -28,9 +36,12 @@ const Toys = () => {
               <Card.Text>$ {item.rate}</Card.Text>
               <Button variant="primary">View Item</Button>
             </Card.Body>
-          </Card>
-        </div>
+            </Card>
+          
+          
+        
       ))}
+    </div>
     </div>
   );
 };

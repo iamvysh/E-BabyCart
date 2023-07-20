@@ -1,38 +1,58 @@
 .main {
-    height: 69vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+  height: 69vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 26px;
+  margin-right: 26px;
+}
+
+.image {
+  height: 200px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.cardText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.image:hover {
+  filter: brightness(0.3);
+}
+
+@media screen and (max-width: 700px) {
   .cardContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-left: 26px;
-    margin-right: 26px;
-    
-
+    flex-direction: column;
+    align-items: center;
+    margin-top: 312px;
   }
+
   .image {
-    height: 200px; /* Set the desired fixed height for the images */
-    object-fit: cover;
-    filter: brightness(0.7);
-  }  
-  .cardText {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-    pointer-events: none;
+    height: 150px;
   }
 
-  .image:hover{
-    
-    filter: brightness(0.3);
+  .cardText {
+    font-size: 16px;
   }
+  Card{
+    width:45%;
+
+  }
+}
