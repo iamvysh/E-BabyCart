@@ -19,6 +19,8 @@ const CustomNavbar = () => {
 
   const { search, setsearch, login, setlogin, register,cart } = useContext(context);
 
+  console.log(register);
+
   const logout = () => {
     const confirm = window.confirm("are  you sure you want to logout");
     if (confirm) {
@@ -129,12 +131,27 @@ const CustomNavbar = () => {
                   }
                   className="icon gift"
                 />
-                {login ? <  BiExit onClick={logout}  style={{fontSize:"14px"}} /> : (
-                  <FaUser
-                    onClick={() => navigate("/registration")}
-                    className="icon"
-                  />
-                )}
+                {login ? (
+  <div className="icon-container">
+    {/* <div className="cartnumber">{cart.length}</div> */}
+    <BsCartFill
+      onClick={() =>
+        login ? navigate("/cart") : alert("please login")
+      }
+      className="icon gift"
+    />
+    <BiExit onClick={logout} style={{ fontSize: "14px" }} />
+    <p style={{margin:"auto"}} onClick={logout}>{register[0].name}</p>
+  </div>
+) : (
+  <div className="icon-container">
+    <FaUser
+      onClick={() => navigate("/registration")}
+      className="icon"
+    />
+  </div>
+)}
+
               </div>
             </Form>
           </Navbar.Collapse>
