@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {context} from "./Store/Context"
 
-import "./App.css"
+// import "./App.css"
 
 import CustomNavbar from './Components/Navbar';
 import { Route, Routes, useLocation } from 'react-router-dom';

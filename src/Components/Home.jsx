@@ -14,6 +14,10 @@ const Home = () => {
   };
 
   return (
+
+
+    <div className="conatainer">
+
     <div className="maindiv">
       <Carousel>
         <Carousel.Item className="c-item">
@@ -88,6 +92,7 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+    </div>
     </div>
   );
 };
